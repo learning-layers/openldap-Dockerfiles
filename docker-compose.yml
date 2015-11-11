@@ -7,7 +7,7 @@ openldapdata:
         - ./openldap-data/backup/:/backup
 openldap:
     container_name: openldap
-    image: gordinlearninglayers/openldap:0.0.1
+    image: learninglayers/openldap:0.0.1
     env_file:
         - services/openldap/LDAP.env
     ports:
