@@ -1,0 +1,18 @@
+openldapdata:
+    container_name: openldap-data
+    image: learninglayers/openldap-data:0.0.1
+    env_file:
+        - services/openldap/LDAP.env
+    volumes:
+        - ./openldap-data/backup/:/backup
+openldap:
+    container_name: openldap
+    image: gordinlearninglayers/openldap:0.0.1
+    env_file:
+        - services/openldap/LDAP.env
+    ports:
+        - "389:389"
+    volumes_from:
+        - openldapdata
+    volumes:
+        - /dev/urandom:/dev/random
