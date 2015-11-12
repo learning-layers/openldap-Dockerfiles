@@ -19,8 +19,8 @@ RUN wget ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/openlda
 	make install
 
 WORKDIR /usr/local/etc/openldap
-COPY start-openldap.sh start-openldap.sh
+COPY start-openldap.sh /usr/bin/start-openldap.sh
 
 EXPOSE 389
 
-CMD ["bash", "start-openldap.sh"]
+CMD ["bash", "/usr/bin/start-openldap.sh"]

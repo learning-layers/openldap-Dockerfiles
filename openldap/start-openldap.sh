@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 if [ -f openldap_configured.txt ];
 then
    echo "OpenLDAP was already configured, starting it."
