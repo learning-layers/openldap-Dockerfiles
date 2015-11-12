@@ -9,5 +9,5 @@ else
    ldapadd -x -w $LDAP_ROOT_PASSWORD -D "cn=LayersManager,dc=learning-layers,dc=eu" -f /usr/local/etc/openldap/ldap-init.ldif
    pkill slapd
    echo 'OpenLDAP' > openldap_configured.txt
-   /usr/local/libexec/slapd -d
+   /usr/local/libexec/slapd -d 8
 fi
