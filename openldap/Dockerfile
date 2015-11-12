@@ -22,8 +22,7 @@ WORKDIR /usr/local/etc/openldap
 EXPOSE 389
 
 CMD /usr/local/libexec/slapd && \
-    while ! ping -c1 mysql &>/dev/null; do sleep 0.2; done && \
-    while ! timeout 1 bash -c 'cat < /dev/null > /dev/tcp/mysql/3306' 2>/dev/null; do sleep 0.5; done && \
+    sleep 5 && \
     ldapadd -x -w $LDAP_ROOT_PASSWORD -D "cn=LayersManager,dc=learning-layers,dc=eu" -f /usr/local/etc/openldap/ldap-init.ldif && \
     pkill slapd && \
     /usr/local/libexec/slapd -d 8
