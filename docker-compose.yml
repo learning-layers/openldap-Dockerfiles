@@ -7,7 +7,7 @@ openldapdata:
         - ./openldap-data/backup/:/backup
 openldap:
     container_name: openldap
-    image: learninglayers/openldap:0.0.8
+    image: learninglayers/openldap:0.0.9
     env_file:
         - services/openldap/LDAP.env
     ports:
