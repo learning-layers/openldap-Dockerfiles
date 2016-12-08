@@ -8,11 +8,11 @@ RUN apt-get update && apt-get install -y wget \
 					   groff-base
 
 WORKDIR /opt
-RUN wget ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/openldap-2.4.42.tgz && \
+RUN wget ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/openldap-2.4.44.tgz && \
 	mkdir src && \
-	mkdir openldap-2.4.42 && \
-	tar xfz openldap-2.4.42.tgz -C src/ && \
-	cd src/openldap-2.4.42 && \
+	mkdir openldap-2.4.44 && \
+	tar xfz openldap-2.4.44.tgz -C src/ && \
+	cd src/openldap-2.4.44 && \
 	./configure --enable-bdb=no --enable-hdb=no && \
 	make depend && \
 	make && \
